@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y \
 
 COPY moodle-php.ini /usr/local/etc/php/conf.d/
 COPY moodle/ /var/www/html/
-
+COPY moodledata/ /var/www/html/moodledata/
 RUN chown -R www-data:www-data /var/www/html
 
 EXPOSE 80
