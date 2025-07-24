@@ -1,0 +1,35 @@
+version: '3.7'
+
+services:
+  moodle:
+    image: bitnami/moodle:latest
+    ports:
+      - "8080:8080"
+      - "8443:8443"
+    environment:
+      - MOODLE_USERNAME=admin
+      - MOODLE_PASSWORD=admin123
+      - MOODLE_EMAIL=admin@example.com
+      - MOODLE_DATABASE_TYPE=pgsql
+      - MOODLE_DATABASE_HOST=moodledb
+      - MOODLE_DATABASE_PORT_NUMBER=5432
+      - MOODLE_DATABASE_USER=bn_moodle
+      - MOODLE_DATABASE_NAME=bitnami_moodle
+      - MOODLE_DATABASE_PASSWORD=bitnami
+    volumes:
+      - moodle_data:/bitnami/moodle
+      - moodledata:/bitnami/moodledata
+
+  moodledb:
+    image: bitnami/postgresql:latest
+    environment:
+      - POSTGRESQL_USERNAME=bn_moodle
+      - POSTGRESQL_PASSWORD=bitnami
+      - POSTGRESQL_DATABASE=bitnami_moodle
+    volumes:
+      - pgdata:/bitnami/postgresql
+
+volumes:
+  moodle_data:
+  moodledata:
+  pgdata:
