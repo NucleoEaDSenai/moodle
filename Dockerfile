@@ -5,7 +5,7 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install pdo pdo_pgsql pgsql zip xml mbstring curl gd
 
 COPY moodle-php.ini /usr/local/etc/php/conf.d/
-COPY moodle /var/www/html/
+COPY moodle/ /var/www/html/
 
 RUN chown -R www-data:www-data /var/www/html
 
