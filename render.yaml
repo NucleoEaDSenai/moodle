@@ -23,3 +23,5 @@ services:
         value: moodle_db_3fty
       - key: MOODLE_DATABASE_PASSWORD
         value: byVrDZ0wE3VuhxxHkznNLeJj68GYNSVF
+      - key: APACHE_HTTP_PORT
+        value: $PORT
