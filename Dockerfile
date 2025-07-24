@@ -17,6 +17,7 @@ RUN apt-get update && apt-get install -y \
     libcurl4-openssl-dev \
     libssl-dev \
     && docker-php-ext-install \
+	gd \	
         intl \
         soap \
         exif \
@@ -25,7 +26,7 @@ RUN apt-get update && apt-get install -y \
         pdo \
         pgsql \
         pdo_pgsql \
-    && docker-php-ext-enable pgsql pdo_pgsql
+    && docker-php-ext-enable gd pgsql pdo_pgsql
 
 # Configurações PHP
 COPY moodle-php.ini /usr/local/etc/php/conf.d/
