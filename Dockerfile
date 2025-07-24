@@ -14,8 +14,12 @@ COPY moodle/ /var/www/html/
 # Copia a pasta de dados para fora da pasta pública
 COPY moodledata/ /var/www/moodledata/
 
+COPY moodle-php.ini /usr/local/etc/php/conf.d/
+
 # Define permissões adequadas
 RUN chown -R www-data:www-data /var/www/html /var/www/moodledata
+
+
 
 EXPOSE 80
 CMD ["apache2-foreground"]
