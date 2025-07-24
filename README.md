@@ -1,26 +1,22 @@
-# Ambiente de Testes Moodle com Docker
+# Moodle no Render.com
 
-Este projeto configura um ambiente Moodle completo com PostgreSQL utilizando Docker Compose.
+Este repositório permite rodar o Moodle com SQLite diretamente no plano gratuito do Render.
 
-## Como usar
+## Deploy
 
-### Requisitos
-- Docker e Docker Compose instalados
+1. Faça fork deste repositório ou envie para o seu GitHub
+2. Vá para [https://render.com](https://render.com)
+3. Clique em "New Web Service"
+4. Selecione seu repositório com estes arquivos
+5. O Render detectará o Dockerfile e iniciará o deploy
 
-### Passos
-1. Execute:
-   docker-compose up
+## Acesso
 
-2. Acesse:
-   - http://localhost:8080
-   - Usuário: admin
-   - Senha: admin123
+- URL: https://moodle-app.onrender.com (ou similar)
+- Usuário: admin
+- Senha: admin123
 
-3. Para instalar plugins:
-   - Acesse o painel administrativo do Moodle
-   - Vá para "Site Administration → Plugins → Install plugins"
-   - Envie o seu plugin .zip
+## Importante
 
----
-
-Você também pode usar este ambiente em nuvens como Railway, Render ou Oracle Cloud.
+- Este setup usa SQLite por simplicidade
+- Para produção, conecte um banco PostgreSQL e ajuste o Dockerfile/envVars
