@@ -1,13 +1,13 @@
-# Moodle no Render.com com PostgreSQL
+# Moodle no Render.com com imagem oficial
 
-Este repositório permite rodar o Moodle com PostgreSQL no Render.com (plano gratuito).
+Este repositório utiliza a imagem oficial do Moodle com suporte ao Render.com.
 
 ## Deploy
 
-1. Faça fork ou envie este código para seu GitHub
+1. Faça fork ou envie para o seu GitHub
 2. No Render, clique em "New Web Service"
-3. Selecione este repositório
-4. O Render criará o ambiente automaticamente
+3. Escolha este repositório
+4. O Render fará o deploy automaticamente
 
 ## Acesso
 
@@ -17,7 +17,7 @@ Este repositório permite rodar o Moodle com PostgreSQL no Render.com (plano gra
 
 ## Banco de Dados
 
-Este projeto está conectado ao banco PostgreSQL:
+Este projeto se conecta ao banco PostgreSQL:
 - Host: dpg-d2130oali9vc739huubg-a
 - Database: moodle_db_3fty
 - User: moodle_db_3fty_user
