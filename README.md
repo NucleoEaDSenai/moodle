@@ -1,23 +1,21 @@
-# Moodle no Render.com com imagem oficial
+# Moodle Custom no Render
 
-Este repositório utiliza a imagem oficial do Moodle com suporte ao Render.com.
+Este projeto cria uma imagem Docker mínima com Apache, PHP e Moodle (baixado da fonte oficial).
 
-## Deploy
+## Como usar
 
-1. Faça fork ou envie para o seu GitHub
+1. Envie para um repositório no seu GitHub
 2. No Render, clique em "New Web Service"
-3. Escolha este repositório
-4. O Render fará o deploy automaticamente
+3. Selecione este repositório
+4. O Render irá buildar e disponibilizar o Moodle automaticamente
 
-## Acesso
+## Dados de Acesso
 
-- URL: fornecida pelo Render
 - Usuário: admin
 - Senha: admin123
 
-## Banco de Dados
-
-Este projeto se conecta ao banco PostgreSQL:
+Banco de dados usado:
 - Host: dpg-d2130oali9vc739huubg-a
-- Database: moodle_db_3fty
-- User: moodle_db_3fty_user
+- Porta: 5432
+- Nome: moodle_db_3fty
+- Usuário: moodle_db_3fty_user
