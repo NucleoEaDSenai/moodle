@@ -1,22 +1,23 @@
-# Moodle no Render.com
+# Moodle no Render.com com PostgreSQL
 
-Este repositório permite rodar o Moodle com SQLite diretamente no plano gratuito do Render.
+Este repositório permite rodar o Moodle com PostgreSQL no Render.com (plano gratuito).
 
 ## Deploy
 
-1. Faça fork deste repositório ou envie para o seu GitHub
-2. Vá para [https://render.com](https://render.com)
-3. Clique em "New Web Service"
-4. Selecione seu repositório com estes arquivos
-5. O Render detectará o Dockerfile e iniciará o deploy
+1. Faça fork ou envie este código para seu GitHub
+2. No Render, clique em "New Web Service"
+3. Selecione este repositório
+4. O Render criará o ambiente automaticamente
 
 ## Acesso
 
-- URL: https://moodle-app.onrender.com (ou similar)
+- URL: fornecida pelo Render
 - Usuário: admin
 - Senha: admin123
 
-## Importante
+## Banco de Dados
 
-- Este setup usa SQLite por simplicidade
-- Para produção, conecte um banco PostgreSQL e ajuste o Dockerfile/envVars
+Este projeto está conectado ao banco PostgreSQL:
+- Host: dpg-d2130oali9vc739huubg-a
+- Database: moodle_db_3fty
+- User: moodle_db_3fty_user
