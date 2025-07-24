@@ -1,25 +1,27 @@
 FROM php:7.4-apache
 
-# Instala dependências
+# Instalar dependências necessárias
 RUN apt-get update && apt-get install -y \
-    git unzip libpq-dev libzip-dev libjpeg-dev libpng-dev libxml2-dev libonig-dev libcurl4-openssl-dev \
-    && docker-php-ext-install pdo pdo_pgsql pgsql zip xml mbstring curl gd
+    unzip \
+    git \
+    libicu-dev \
+    libxml2-dev \
+    libzip-dev \
+    zip \
+    libpng-dev \
+    libjpeg-dev \
+    libonig-dev \
+    libxslt-dev
 
-# Copia configurações PHP personalizadas
+# Instalar extensões PHP obrigatórias e recomendadas
+RUN docker-php-ext-install intl soap exif opcache zip mysqli pdo pdo_pgsql
+
+# Configurações do PHP
 COPY moodle-php.ini /usr/local/etc/php/conf.d/
 
-# Copia os arquivos do Moodle para a pasta pública do Apache
+# Copiar arquivos do Moodle
 COPY moodle/ /var/www/html/
-
-# Copia a pasta de dados para fora da pasta pública
 COPY moodledata/ /var/www/moodledata/
-
-COPY moodle-php.ini /usr/local/etc/php/conf.d/
-
-# Define permissões adequadas
-RUN chown -R www-data:www-data /var/www/html /var/www/moodledata
-
-
+RUN chown -R www-data:www-data /var/www/
 
 EXPOSE 80
-CMD ["apache2-foreground"]
